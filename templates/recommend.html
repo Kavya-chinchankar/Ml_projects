@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Book Recommender System</title>
+      <!-- Latest compiled and minified CSS -->
+      <linkrel="stylesheet"href="https:
+      //cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous" />
+  
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/style.css"> <!-- Resource style -->
+    <link rel="stylesheet" href="http://127.0.0.1:5000/static/css/demo.css"> <!-- Demo style -->
+  
+</head>
+
+
+<style>
+    .text-white {
+        color: white;
+    }
+</style>
+
+<body style="background-color: black">
+    <header class="cd-main-header">
+      <div class="cd-main-header__logo">
+        <a href="#0"><img src="http://127.0.0.1:5000/static/img/cd-logo.svg" alt="Logo" /></a>
+      </div>
+  
+      <nav class="cd-main-nav js-main-nav">
+        <ul class="cd-main-nav__list js-signin-modal-trigger">
+          <li>
+            <a class="cd-main-nav__item cd-main-nav__item--signin class" href="#0" data-signin="login">My BOOK Recommender</a>
+          </li>
+          <li class="class2">Connecting the RIGHT Records with the RIGHT Book</li>
+          <li>
+            <a class="cd-main-nav__item cd-main-nav__item--signup" href="/index" data-signin="signup">Home</a>
+          </li>
+          <li>
+            <a class="cd-main-nav__item cd-main-nav__item--signup" href="/recommend" data-signin="signup">Recommend</a>
+          </li>
+          <li>
+            <a class="cd-main-nav__item cd-main-nav__item--signup" href="#0" data-signin="signup">Contact</a>
+          </li>  
+        </ul>
+      </nav>
+    </header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cd-intro">
+                    <div class="col-md-12">
+                      <h1 class="text-white" style="font-size: 40px; color:wheat;">Recommend Books</h1>
+                    </div>
+                  </div>
+                <form action="/recommend_books" method="post">
+                    <p class="cd-signin-modal__fieldset" style="width: 78%; margin-left: 110px;  transform: translateY(-80px);" >
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width cd-signin-modal__input--has-padding cd-signin-modal__input--has-border recommend_input" id="signin-book" placeholder=""name="user_input" type="text" class="form-control" >
+					</p>
+
+                    <p class="cd-signin-modal__fieldset" style="width: 10%; margin-left: 45%;  transform: translateY(-80px);" class="recommend_submit">
+						<input class="cd-signin-modal__input cd-signin-modal__input--full-width" type="submit" value="Submit">
+					</p>
+                    <!-- <input name="user_input" type="text" class="form-control" /><br />
+                    <input type="submit" class="btn btn-lg btn-warning" /> -->
+                </form>
+            </div>
+
+            {% if data %} {% for i in data %}
+            <div class="col-md-3" style="margin-top: 50px">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="{{i[2]}}" />
+                        <p class="text-white">{{i[0]}}</p>
+                        <h4 class="text-white">{{i[1]}}</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

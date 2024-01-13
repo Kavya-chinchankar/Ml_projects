@@ -1,0 +1,56 @@
+body{
+    background-image: url(http://127.0.0.1:5000/static/img/p4.jpg);   
+}
+
+/* #box{
+    padding-top: 80px;
+} */
+
+
+#login label{
+    display: inline-block;
+    width: 200px; 
+    padding: 13px;
+    text-align: right;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+#login{
+    margin-left: 500px;
+    margin-right: 500px;
+    background-image: url(http://127.0.0.1:5000/static/img/p3.jpg);
+    transform: translate(0px,100px);
+    padding-top: 35px;
+    padding-bottom: 120px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+    border-radius: 5px;
+}
+
+#submit{
+    background-color: rgb(75, 75, 108);
+    width: 30%;
+    color: bisque;
+    text-align: center; 
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 7px #999;
+}
+
+#submit:hover{
+    transform: skew(5deg);
+    background-color: rgb(35, 35, 88);
+}
+
+h1{
+    text-align: center;
+    color: rgb(30, 30, 49);
+    font-family: serif;
+    padding-bottom: 20px;
+}
+
+.url_a{
+    margin-top: 10px;
+    padding-top: 40px;
+    padding-left: 150px;
+}
